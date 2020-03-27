@@ -49,7 +49,7 @@ public class ChestsConfig {
 		}
 		try {
 			getConfig().save(arenaFile);
-		} catch (IOException ex) {
+		} catch (IOException ignored) {
 
 		}
 	}
@@ -62,7 +62,7 @@ public class ChestsConfig {
 
 		InputStream defConfigStream = plugin.getResource("chests.yml");
 		if (defConfigStream != null) {
-			YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+			YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(arenaFile);
 			arenaConfig.setDefaults(defConfig);
 		}
 	}
